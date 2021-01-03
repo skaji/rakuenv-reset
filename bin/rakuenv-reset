@@ -93,6 +93,12 @@ main() {
     die "Need VERSION argument"
   fi
   local version="${argv[0]}"
+  if [[ $version = "-" ]]; then
+    version=$(rakuenv-version-name)
+    if [[ $version = system ]]; then
+      die "Cannot reset system raku"
+    fi
+  fi
   run "$version"
 }
 
