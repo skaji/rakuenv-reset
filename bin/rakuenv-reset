@@ -70,7 +70,7 @@ main() {
       _v="${_argv[0]:1}"
       _argv=($(echo "$_v" | \grep -o . | \sed -e 's/^/-/') "${_argv[@]:1}")
       ;;
-    -*)
+    -?*)
       echo "Unknown option ${_argv[0]}" >&2
       return 1
       ;;
